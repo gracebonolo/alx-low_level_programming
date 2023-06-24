@@ -2,29 +2,9 @@
 #include "main.h"
 
 /**
- * largest_number - Finds the largest of three integers
- * @a: First integer
- * @b: Second integer
- * @c: Third integer
+ * main - Prints the largest of 3 integers
  *
- * Return: The largest of the three integers
- */
-int largest_number(int a, int b, int c)
-{
-	int largest = a;
-
-	if (b > largest)
-		largest = b;
-	if (c > largest)
-		largest = c;
-
-	return (largest);
-}
-
-/**
- * main - Entry point of the program
- *
- * Return: Always 0 (Success)
+ * Return: Always 0
  */
 int main(void)
 {
@@ -39,5 +19,5 @@ int main(void)
 
 	printf("%d is the largest number\n", largest);
 
-	return (0);
+	return 0;
 }
