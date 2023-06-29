@@ -1,3 +1,0 @@
-n.c:(.text+0x62): undefined reference to `_strncpy'
-/usr/bin/ld: 2-main.c:(.text+0x96): undefined reference to `_strncpy'
-collect2: error: ld returned 1 exit status
