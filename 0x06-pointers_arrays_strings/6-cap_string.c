@@ -1,3 +1,4 @@
+#include "main.h"
 #include <ctype.h>
 
 /**
@@ -13,11 +14,11 @@ char *cap_string(char *str)
 
 	while (str[i] != '\0')
 	{
-		if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-		    || str[i] == ',' || str[i] == ';' || str[i] == '.'
-		    || str[i] == '!' || str[i] == '?' || str[i] == '"'
-		    || str[i] == '(' || str[i] == ')' || str[i] == '{'
-		    || str[i] == '}')
+		if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
+		    str[i] == ',' || str[i] == ';' || str[i] == '.' ||
+		    str[i] == '!' || str[i] == '?' || str[i] == '"' ||
+		    str[i] == '(' || str[i] == ')' || str[i] == '{' ||
+		    str[i] == '}')
 		{
 			capitalize = 1;
 		}
