@@ -1,12 +1,13 @@
 #include "main.h"
+#include <stddef.h>
 
 /**
- * _strncpy - copies a string
- * @dest: destination buffer
- * @src: source string
- * @n: maximum number of characters to copy
+ * _strncpy - Copies a string
+ * @dest: Destination buffer
+ * @src: Source string
+ * @n: Maximum number of characters to copy
  *
- * Return: pointer to destination string
+ * Return: Pointer to destination string
  */
 char *_strncpy(char *dest, const char *src, size_t n)
 {
