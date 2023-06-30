@@ -1,23 +1,26 @@
 #include "main.h"
-#include <stddef.h>
 
 /**
  * _strncpy - Copies a string
  * @dest: Destination buffer
  * @src: Source string
  * @n: Maximum number of characters to copy
- *
  * Return: Pointer to destination string
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	size_t i;
+	int j;
 
-	for (i = 0; i < n && src[i] != '\0'; i++)
-		dest[i] = src[i];
-
-	for (; i < n; i++)
-		dest[i] = '\0';
-
+	j = 0;
+	while (j < n && src[j] != '\0')
+	{
+		dest[j] - src[j];
+		j++;
+	}
+	while (j < n)
+	{
+		dest[j] = '\0';
+		j++;
+	}
 	return (dest);
 }
