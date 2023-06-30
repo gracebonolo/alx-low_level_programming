@@ -1,33 +1,34 @@
 #include "main.h"
+#include <ctype.h>
 
 /**
- * cap_string - capitalizes all words in a string
- * @str: input string
+ * cap_string - Capitalizes all words in a string.
+ * @str: Input string.
  *
- * Return: pointer to the resulting string
+ * Return: Pointer to the resulting string.
  */
 char *cap_string(char *str)
 {
-	int i = 0;
+	char *s = str;
 	int capitalize = 1;
 
-	while (str[i] != '\0')
+	while (*s != '\0')
 	{
-		if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
-		    str[i] == ',' || str[i] == ';' || str[i] == '.' ||
-		    str[i] == '!' || str[i] == '?' || str[i] == '"' ||
-		    str[i] == '(' || str[i] == ')' || str[i] == '{' ||
-		    str[i] == '}')
+		if (*s == ' ' || *s == '\t' || *s == '\n' ||
+			*s == ',' || *s == ';' || *s == '.' ||
+			*s == '!' || *s == '?' || *s == '"' ||
+			*s == '(' || *s == ')' || *s == '{' ||
+			*s == '}')
 		{
 			capitalize = 1;
 		}
-		else if (capitalize && islower(str[i]))
+		else if (capitalize && islower(*s))
 		{
-			str[i] = toupper(str[i]);
+			*s = toupper(*s);
 			capitalize = 0;
 		}
 
-		i++;
+		s++;
 	}
 
 	return (str);
