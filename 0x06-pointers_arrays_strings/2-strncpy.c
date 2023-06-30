@@ -5,7 +5,7 @@
  * @dest: Destination buffer
  * @src: Source string
  * @n: Maximum number of characters to copy
- * Return: Pointer to destination string
+ * Return: dest
  */
 char *_strncpy(char *dest, char *src, int n)
 {
@@ -14,7 +14,7 @@ char *_strncpy(char *dest, char *src, int n)
 	j = 0;
 	while (j < n && src[j] != '\0')
 	{
-		dest[j] - src[j];
+		dest[j] = src[j];
 		j++;
 	}
 	while (j < n)
