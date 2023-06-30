@@ -9,16 +9,19 @@
  */
 char *cap_string(char *str)
 {
-	char *s = str;
+	if (str == NULL)
+		return (NULL);
+
 	int capitalize = 1;
+	char *s = str;
 
 	while (*s != '\0')
 	{
 		if (*s == ' ' || *s == '\t' || *s == '\n' ||
-			*s == ',' || *s == ';' || *s == '.' ||
-			*s == '!' || *s == '?' || *s == '"' ||
-			*s == '(' || *s == ')' || *s == '{' ||
-			*s == '}')
+		    *s == ',' || *s == ';' || *s == '.' ||
+		    *s == '!' || *s == '?' || *s == '"' ||
+		    *s == '(' || *s == ')' || *s == '{' ||
+		    *s == '}')
 		{
 			capitalize = 1;
 		}
