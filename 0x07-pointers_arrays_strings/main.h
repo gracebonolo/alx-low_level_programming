@@ -8,8 +8,8 @@ char *_strchr(char *s, char c);
 unsigned int _strspn(char *s, char *accept);
 char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
-void print_cheeseboard(char (*a)[0]);
+void print_cheeseboard(char (*a)[8]);
 void print_diagrams(int *a, int size);
-void set_string(har **s, char *to);
+void set_string(char **s, char *to);
 
 #endif
