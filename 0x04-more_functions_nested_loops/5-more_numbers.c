@@ -1,27 +1,20 @@
+#include "main.h"
+
 /**
- * largest_number - returns the largest of 3 numbers
- * @a: first integer
- * @b: second integer
- * @c: third integer
- *
- * Return: largest number
+ * more_numbers - prints 10 times the numbers from 0 to 14
  */
-int largest_number(int a, int b, int c)
+void more_numbers(void)
 {
-	int largest;
+    int i, j;
 
-	if (a > b && a > c)
-	{
-		largest = a;
-	}
-	else if (b > a && b > c)
-	{
-		largest = b;
-	}
-	else
-	{
-		largest = c;
-	}
-
-	return (largest);
-}
+    for (i = 0; i < 10; i++)
+    {
+        for (j = 0; j <= 14; j++)
+        {
+            if (j > 9)
+                _putchar((j / 10) + '0');
+            _putchar((j % 10) + '0');
+        }
+        _putchar('\n');
+    }
+}	
