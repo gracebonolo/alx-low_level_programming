@@ -9,19 +9,20 @@
  * Return: Pointer to the modified memory block
  *
  * Description: This function fills the first 'n' bytes of the memory block
- *		pointed to by 's' with the value 'b'. It iterates over the
- *		memory block and assigns 'b' to each byte, starting from the
- *		beginning of the block. The function assumes that the memory
- *		block is large enough to accommodate 'n' bytes and does not
- *		perform any size checks.
+ *              pointed to by 's' with the value 'b'. It iterates over the
+ *              memory block and assigns 'b' to each byte, starting from the
+ *              beginning of the block. The function assumes that the memory
+ *              block is large enough to accommodate 'n' bytes and does not
+ *              perform any size checks.
  */
 char *_memset(char *s, char *b, unsigned int n)
 {
-	int i = 0;
+	unsigned int i;
 
-	for (; n > 0; i++)
+	for (i = 0; i < n; i++)
 	{
-		s[i] = b;
-		n--;
-	return (0);
+		s[i] = *b;
+	}
+
+	return (s);
 }
