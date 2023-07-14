@@ -5,7 +5,7 @@
  * @accept: input
  * Return: Always 0 (Success)
  */
-cahr *_strpbrk(char *s, char *accept)
+char *_strpbrk(char *s, char *accept)
 {
 	int k;
 
