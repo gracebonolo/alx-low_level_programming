@@ -1,26 +1,29 @@
 #include "main.h"
 /**
- * _atoi - to convert a string into an integer.
- * @s: the string to use in program
+ * _strncat - function concatemate two strings
+ * using at most n bytes from src
+ * @dest: entered value
+ * @src: entered value
  *
- * Return: integer
+ * Return: dest
  */
-int _atoi(char *s)
+char *_strncat(char *dest, char *src, int n)
 {
-	int sig = 1, i = 0;
-	unsigned int unsig = 0;
+	int a;
+	int b;
 
-	while (!(s[i] <= '9' && s[i] >= '0') && s[i] != '\0')
+	a = 0;
+	while (dest[a] != '\0')
 	{
-		if (s[i] == '-')
-			sig *= -1;
-		i++;
+		a++;
 	}
-	while (s[i] <= '9' && (s[i] >= '0' && s[i] != '\0'))
+	b = 0;
+	while (b < n && src[b] != '\0')
 	{
-		unsig = (unsig * 10) + (s[i] - '0');
-		i++;
+	dest[a] = src[b];
+	a++;
+	b++;
 	}
-	unsig *= sig;
-	return (unsig);
+	dest[n] = '\0';
+	return (dest);
 }
