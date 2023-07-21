@@ -8,14 +8,17 @@
  * @name: Name of the dog
  * @age: Age of the dog
  * @owner: Owner of the dog
+ *
+ * Description: This structure represents a dog's basic information.
  */
 struct dog
 {
-    char *name;
-    float age;
-    char *owner;
+	char *name;
+	float age;
+	char *owner;
 };
 
+/* Function prototypes */
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
 typedef struct dog dog_t;
@@ -24,4 +27,5 @@ void free_dog(dog_t *d);
 char *_strcpy(char *dest, const char *src);
 int _strlen(const char *s);
 
-#endif
+#endif /* DOG_H */
+
