@@ -22,11 +22,11 @@ void print_times_table(int n)
             if (j == 0)
                 printf("%d", result);
             else if (result < 10)
-                printf(",%3d", result);
+                printf(", %3d", result);
             else if (result < 100)
-                printf(",%2d", result);
+                printf(", %2d", result);
             else
-                printf(",%d", result);
+                printf(", %d", result);
         }
         printf("\n");
     }
