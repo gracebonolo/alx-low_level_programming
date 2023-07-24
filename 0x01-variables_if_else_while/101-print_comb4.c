@@ -1,25 +1,24 @@
 #include <stdio.h>
 
 /**
- * main - prints all possible combinatins of two-digit numbers
+ * main - prints all possible combinations of three-digit numbers
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int i, j;
+	int i, j, k;
 
-	for (i = 0; i < 100; i++)
+	for (i = 0; i <= 9; i++)
 	{
-		for (j = 0; j < 100; j++)
+		for (j = i + 1; j <= 9; j++)
 		{
-			if (i < j)
+			for (k = j + 1; k <= 9; k++)
 			{
-				putchar((i / 10) + 48);
-				putchar((i % 10) + 48);
-				putchar(' ');
-				putchar((j / 10) + 48);
-				putchar((j % 10) + 48);
-				if (i != 98 || j != 99)
+				putchar(i + '0');
+				putchar(j + '0');
+				putchar(k + '0');
+
+				if (i != 7 || j != 8 || k != 9)
 				{
 					putchar(',');
 					putchar(' ');
@@ -30,4 +29,3 @@ int main(void)
 	putchar('\n');
 	return (0);
 }
-
