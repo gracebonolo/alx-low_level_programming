@@ -32,7 +32,7 @@ void print_error_and_exit(void)
 int main(int argc, char *argv[])
 {
 	int i, j;
-	unsigned long int result;
+	unsigned long int result = 0;
 
 	if (argc != 3)
 		print_error_and_exit();
@@ -46,9 +46,14 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	result = strtoul(argv[1], NULL, 10) * strtoul(argv[2], NULL, 10);
+	for (i = 1; i < 3; i++)
+	{
+		unsigned long int num = strtoul(argv[i], NULL, 10);
+
+		result = (i == 1) ? num : result * num;
+	}
+
 	printf("%lu\n", result);
 
 	return (0);
 }
-
