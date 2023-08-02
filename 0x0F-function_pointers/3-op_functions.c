@@ -1,75 +1,32 @@
 #include "3-calc.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-/**
- * op_add - Returns the sum of a and b.
- * @a: The first integer.
- * @b: The second integer.
- *
- * Return: The sum of a and b.
- */
+/* Function to perform addition */
 int op_add(int a, int b)
 {
-	return (a + b);
+    return (a + b);
 }
 
-/**
- * op_sub - Returns the difference of a and b.
- * @a: The first integer.
- * @b: The second integer.
- *
- * Return: The difference of a and b.
- */
+/* Function to perform subtraction */
 int op_sub(int a, int b)
 {
-	return (a - b);
+    return (a - b);
 }
 
-/**
- * op_mul - Returns the product of a and b.
- * @a: The first integer.
- * @b: The second integer.
- *
- * Return: The product of a and b.
- */
+/* Function to perform multiplication */
 int op_mul(int a, int b)
 {
-	return (a * b);
+    return (a * b);
 }
 
-/**
- * op_div - Returns the result of the division of a by b.
- * @a: The first integer.
- * @b: The second integer.
- *
- * Return: The result of the division of a by b.
- *         If 'b' is 0, the function will print an error message and exit with status 100.
- */
+/* Function to perform division */
 int op_div(int a, int b)
 {
-	if (b == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-	return (a / b);
+    return (a / b);
 }
 
-/**
- * op_mod - Returns the remainder of the division of a by b.
- * @a: The first integer.
- * @b: The second integer.
- *
- * Return: The remainder of the division of a by b.
- *         If 'b' is 0, the function will print an error message and exit with status 100.
- */
+/* Function to perform modulo */
 int op_mod(int a, int b)
 {
-	if (b == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-	return (a % b);
+    return (a % b);
 }
+
