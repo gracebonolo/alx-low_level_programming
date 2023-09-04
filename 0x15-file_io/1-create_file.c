@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include "main.h"
 
 /**
  * create_file - Creates a file
@@ -12,33 +13,24 @@
  */
 int create_file(const char *filename, char *text_content)
 {
+	int fd, w, len = 0;
+
 	if (filename == NULL)
-		return (-1);
-
-	int fd;
-	ssize_t text_len;
-	ssize_t bytes_written;
-
-	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
-
-	if (fd == -1)
 		return (-1);
 
 	if (text_content != NULL)
 	{
-		text_len = 0;
-		while (text_content[text_len] != '\0')
-			text_len++;
-
-		bytes_written = write(fd, text_content, text_len);
-
-		if (bytes_written == -1 || bytes_written != text_len)
-		{
-			close(fd);
-			return (-1);
-		}
+		for (len = 0; text_content[len];)
+			len++;
 	}
 
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	w = write(fd, text_content, len);
+
+	if (fd == -1 || w == -1)
+		return (-1);
+
 	close(fd);
+
 	return (1);
 }
