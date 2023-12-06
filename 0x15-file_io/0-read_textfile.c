@@ -12,20 +12,24 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
+	FILE *file;
+	char *buffer;
+	ssize_t bytesRead, bytesWritten;
+
 	if (filename == NULL)
 	{
 		fprintf(stderr, "Error: Filename is NULL\n");
 		return (0);
 	}
 
-	FILE *file = fopen(filename, "r");
+	file = fopen(filename, "r");
 	if (file == NULL)
 	{
 		perror("Error opening file");
 		return (0);
 	}
 
-	char *buffer = (char *)malloc(letters + 1); /* Allocate space for the buffer */
+	buffer = (char *)malloc(letters + 1); /* Allocate space for the buffer */
 	if (buffer == NULL)
 	{
 		perror("Error allocating buffer");
@@ -33,7 +37,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	ssize_t bytesRead = fread(buffer, 1, letters, file);
+	bytesRead = fread(buffer, 1, letters, file);
 	if (bytesRead == -1)
 	{
 		perror("Error reading file");
@@ -44,7 +48,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	buffer[bytesRead] = '\0'; /* Null-terminate the string */
 
-	ssize_t bytesWritten = write(STDOUT_FILENO, buffer, bytesRead);
+	bytesWritten = write(STDOUT_FILENO, buffer, bytesRead);
 	if (bytesWritten == -1 || (size_t)bytesWritten != (size_t)bytesRead)
 	{
 		perror("Error writing to stdout");
