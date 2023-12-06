@@ -2,8 +2,10 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+size_t _strlen(char *s);
+
 /**
- * create_file - Creates a file with a specified text content.
+ * create_file - Creates a file with specified text content.
  * @filename: The name of the file to create.
  * @text_content: The text content to write to the file.
  *
