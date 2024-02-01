@@ -67,25 +67,3 @@ void free_hash_table(hash_table_t *ht)
 	free(ht);
 }
 
-/**
- * main - Entry point.
- *
- * Return: EXIT_SUCCESS if successful, EXIT_FAILURE otherwise.
- */
-
-int main(void)
-{
-	hash_table_t *ht;
-
-	ht = hash_table_create(1024);
-	if (ht == NULL)
-		return (EXIT_FAILURE);
-
-	/* Perform operations with the hash table */
-
-	/* Free the allocated memory for the hash table when done */
-	free_hash_table(ht);
-
-	return (EXIT_SUCCESS);
-}
-
